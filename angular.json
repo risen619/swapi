@@ -89,6 +89,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "swapi"
+    }
+  },
+  "defaultProject": "swapi",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
