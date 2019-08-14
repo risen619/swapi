@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { ActionsSubject, Store } from '@ngrx/store';
 
 import { of } from 'rxjs';
-import { map, flatMap, take } from 'rxjs/operators';
+import { map, flatMap, take, switchMap, concatMap } from 'rxjs/operators';
 
 import { State } from '../reducers';
 import * as Actions from '../actions/film.actions';
@@ -29,7 +29,7 @@ export class FilmFacade extends AsyncTracker
         const getFilm = () => this.films.pipe(map(f => f[id]));
 
         return getFilm().pipe(
-            flatMap(f =>
+            concatMap(f =>
             {
                 if(f) return of(f);
                 else

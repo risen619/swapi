@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Store, ActionsSubject } from '@ngrx/store';
 
 import { of, throwError } from 'rxjs';
-import { map, mergeMap, take, filter, flatMap } from 'rxjs/operators';
+import { map, mergeMap, take, filter, flatMap, switchMap, concatMap } from 'rxjs/operators';
 
 import * as Actions from '../actions/character.actions';
 import { State } from '../reducers';
@@ -29,7 +29,7 @@ export class CharacterFacade extends AsyncTracker
         const getCharacter = () => this.characters.pipe(map(c => c[id]));
 
         return getCharacter().pipe(
-            flatMap(c =>
+            concatMap(c =>
             {
                 if(c) return of(c);
                 else

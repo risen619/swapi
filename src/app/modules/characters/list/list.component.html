@@ -1,6 +1,6 @@
-<filters></filters>
+<filters (filtersChange)="onFiltersChange($event)"></filters>
 
-<div *ngFor="let m of models">
+<div *ngFor="let m of filteredModels">
     <p [routerLink]="m.id">
         {{ m.name }}
     </p>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ListComponent } from './list/list.component';
 import { CharacterComponent } from './character/character.component';
@@ -25,7 +26,9 @@ const routes: Route[] = [
 	],
 	imports: [
 		CommonModule,
-		RouterModule.forChild(routes)
+		RouterModule.forChild(routes),
+		ReactiveFormsModule
+		
 	]
 })
 export class CharactersModule { }

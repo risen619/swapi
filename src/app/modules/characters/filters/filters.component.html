@@ -1,1 +1,8 @@
-<p>filters works!</p>
+<form [formGroup]="form">
+    <select *ngIf="films" formControlName="film">
+        <option [value]="''">All</option>
+        <option *ngFor="let f of films" [value]="f.url">
+            {{ f.title }}
+        </option>
+    </select>
+</form>
