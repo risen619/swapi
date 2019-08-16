@@ -8,7 +8,7 @@ import { mergeMap, catchError, map, withLatestFrom } from 'rxjs/operators';
 
 import * as FilmActions from '../actions/film.actions';
 
-import { FilmsApiService } from 'src/app/services/api/films.api.service';
+import { FilmsApiService } from 'src/app/services/api';
 import { FilmFacade } from '../facades/film';
 
 

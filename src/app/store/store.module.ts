@@ -7,8 +7,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 
 import { reducers, metaReducers } from './reducers';
+
 import { CharacterEffects } from './effects/character.effects';
 import { FilmEffects } from './effects/film.effects';
+import { SpeciesEffects } from './effects/species.effects';
+import { StarshipEffects } from './effects/starship.effects';
 
 @NgModule({
 	imports: [
@@ -20,7 +23,7 @@ import { FilmEffects } from './effects/film.effects';
 			}
 		}),
 		!environment.production ? StoreDevtoolsModule.instrument() : [],
-		EffectsModule.forRoot([CharacterEffects, FilmEffects])
+		EffectsModule.forRoot([CharacterEffects, FilmEffects, SpeciesEffects, StarshipEffects])
 	]
 })
 export class StoreModule { }

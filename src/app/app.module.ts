@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -6,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { StoreModule } from './store/store.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
 	declarations: [
@@ -13,9 +15,11 @@ import { StoreModule } from './store/store.module';
 	],
 	imports: [
 		BrowserModule,
+		BrowserAnimationsModule,
 		AppRoutingModule,
 		HttpClientModule,
-		StoreModule
+		StoreModule,
+		SharedModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

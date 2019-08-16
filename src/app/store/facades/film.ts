@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { ActionsSubject, Store } from '@ngrx/store';
 
 import { of } from 'rxjs';
-import { map, flatMap, take, switchMap, concatMap } from 'rxjs/operators';
+import { map, flatMap, take, concatMap } from 'rxjs/operators';
 
 import { State } from '../reducers';
 import * as Actions from '../actions/film.actions';

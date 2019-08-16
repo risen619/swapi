@@ -1,0 +1,13 @@
+:host {
+    mat-expansion-panel {
+        border-radius: 0;
+    }
+
+    mat-list {
+        mat-list-item {
+            a {
+                color: unset;
+            }
+        }
+    }
+}

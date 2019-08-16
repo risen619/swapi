@@ -10,12 +10,12 @@ export class CharactersApiService
 {
 	constructor(private api: ApiService) { }
 
-	getCharacters() : Observable<{ count: number, next: string, previous: string, results: CharacterModel[] }>
+	getCharacters(): Observable<{ count: number, next: string, previous: string, results: CharacterModel[] }>
 	{
 		return this.api.get('people/');
 	}
 
-	getCharacter(id: string) : Observable<CharacterModel>
+	getCharacter(id: string): Observable<CharacterModel>
 	{
 		return this.api.get(`people/${id}/`);
 	}

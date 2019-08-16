@@ -80,4 +80,16 @@ export class Character implements CharacterModel
 	set vehicles(data: string[]) { this._data.vehicles = data; }
 
 	get id() { return this._id; }
+
+	/* Helpers */
+
+	bornBetween(from: number, to: number)
+	{
+		if(!/[\d\.]+\w+/.test(this.birth_year)) return true;
+
+		const parts = this.birth_year.match(/([\d\.]+)(\w+)/);
+
+		const year = parseFloat(parts[1] as string) * (parts[2] === 'BBY' ? -1 : 1);
+		return from <= year && year <= to;
+	}
 }

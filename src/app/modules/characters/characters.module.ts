@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
 import { CharacterComponent } from './character/character.component';
 import { FiltersComponent } from './filters/filters.component';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Route[] = [
 	{
@@ -27,8 +28,8 @@ const routes: Route[] = [
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
-		ReactiveFormsModule
-		
+		ReactiveFormsModule,
+		SharedModule
 	]
 })
 export class CharactersModule { }
