@@ -18,12 +18,11 @@ export class ListComponent
 
 	private filters: Filters = { film: '', species: '', birthFrom: -100, birthTo: 100 };
 	private models: Character[] = [];
-	private filteredModels: Character[] = [];
+	
+	filteredModels: Character[] = [];
 
 	constructor(private charactersFacade: CharacterFacade)
 	{
-		window['c'] = this;
-
 		this.subs.push(
 			this.charactersFacade.characters.subscribe(c =>
 			{

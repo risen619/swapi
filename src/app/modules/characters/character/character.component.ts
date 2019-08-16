@@ -24,11 +24,12 @@ export class CharacterComponent
 {
 	private subs: Subscription[] = [];
 
-	private model: Character = null;
 	private _films: Film[] = [];
 	private _species: Species[] = [];
 	private _starships: Starship[] = [];
 	private id: string = null;
+	
+	model: Character = null;
 
 	constructor(
 		route: ActivatedRoute,

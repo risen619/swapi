@@ -16,10 +16,10 @@ export class FiltersComponent
 	@Output() filtersChange = new EventEmitter<Filters>();
 
 	private sub: Subscription = new Subscription();
-	private form: FormGroup;
-
-	private films: Film[] = [];
-	private species: Species[] = [];
+	
+	form: FormGroup;
+	films: Film[] = [];
+	species: Species[] = [];
 
 	constructor(fb: FormBuilder, private filmsFacade: FilmFacade, private speciesFacade: SpeciesFacade)
 	{
@@ -49,7 +49,7 @@ export class FiltersComponent
 		this.sub.unsubscribe();
 	}
 
-	private formatBirth(value) { return `${Math.abs(value)}${value < 0 ? 'BBY' : 'ABY'}`; }
+	formatBirth(value) { return `${Math.abs(value)}${value < 0 ? 'BBY' : 'ABY'}`; }
 }
 
 export interface Filters
